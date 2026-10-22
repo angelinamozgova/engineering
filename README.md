@@ -1,26 +1,35 @@
-# Engineering hub
+<div align="center">
 
-**RU** · Public notes, patterns, and code samples from production work (DevOps, integrations, applied NLU).  
-**EN** · Same — one entry point for recruiters and tech leads.
+# Engineering notes & code samples
 
-| Section | Focus |
-|---------|--------|
-| [devops/](./devops/) | VPS hardening, nginx, monitoring, runbooks |
-| [applied-ai/](./applied-ai/) | Voice → structured fields, NLU pipelines, tests |
-| [case-studies/](./case-studies/) | Short product stories (no proprietary code dumps) |
+Public patterns from production work — **DevOps**, **integrations**, **applied NLU**.
 
-## Code repos (linked from here)
+[← Back to profile](https://github.com/angelinamozgova)
 
-| Repo | Status |
-|------|--------|
-| *voice-intent-nlu* | Planned — parser + tests (extract) |
-| *vps-hardening-playbook* | Planned — sanitized templates |
-
-## Contact
-
-- CV: ask via issues or LinkedIn (link in profile README)
-- **No** secrets, prod IPs, or `.env` in this org — ever
+</div>
 
 ---
 
-*Maintained by Angelina Mozgova · System / platform engineer · shipped mobile & web products*
+## Sections
+
+| Section | Focus |
+|---------|--------|
+| [**devops/**](./devops/) | VPS hardening, nginx, monitoring, runbooks |
+| [**applied-ai/**](./applied-ai/) | Voice → structured fields → API, NLU pipelines, tests |
+| [**case-studies/**](./case-studies/) | Short narratives (no proprietary code dumps) |
+
+## Planned code extracts
+
+| Topic | Status |
+|-------|--------|
+| Voice intent parser + tests | planned |
+| Sanitized nginx / UFW templates | planned |
+
+## Rules for this repo
+
+- No secrets, production IPs, or `.env` files
+- Obfuscated configs only
+
+---
+
+*Mozgova Angelina · system / platform engineering*
