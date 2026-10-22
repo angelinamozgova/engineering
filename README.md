@@ -2,7 +2,7 @@
 
 # Engineering notes & code samples
 
-Public patterns from production work — **DevOps**, **integrations**, **applied NLU**.
+Public patterns from production work - **DevOps**, **integrations**, **applied NLU**.
 
 [← Back to profile](https://github.com/angelinamozgova)
 

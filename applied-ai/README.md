@@ -1,6 +1,6 @@
 # Applied AI (NLU in products)
 
-Not “ChatGPT wrapper” — **speech → structured fields → API → DB** with tests.
+Not “ChatGPT wrapper” - **speech → structured fields → API → DB** with tests.
 
 ## Roadmap
 
