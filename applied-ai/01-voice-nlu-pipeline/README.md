@@ -1,31 +1,32 @@
 # Voice NLU pipeline (with tests)
 
-**Not an LLM wrapper.** Platform speech-to-text, then **our rule-based parser**, then **save on the application server**, then the database.
+Deterministic **rule-based NLU** on top of platform **speech-to-text**. Parsed fields are validated and stored through the application backend (PostgreSQL).
 
-We avoid saying **API** in the headline chain (it sounds like “another AI service”). Same step, clearer names:
+**Pipeline (wording for docs and interviews):**
 
-| Short (EN) | Meaning |
-|------------|---------|
-| **Voice** | Microphone → text (OS / browser STT) |
-| **Structured fields** | Our NLU: intent, names, dates, services, price |
-| **Server save** | HTTP handler validates auth → writes JSON to PostgreSQL |
-| **Database** | Long-term storage |
+```
+Voice (STT) -> structured fields (NLU) -> application backend -> database
+```
 
-| Коротко (RU) | Смысл |
-|--------------|--------|
-| **Голос** | STT платформы |
-| **Поля формы** | Наш разбор текста |
-| **Сохранение на сервере** | Проверка доступа + запись |
-| **База** | PostgreSQL |
+We do not label the backend step as a generic **API** in diagrams when it reads like a separate AI product - same handler, clearer name: **server-side save** or **application backend**.
 
-## Two domains in this folder
+| Step | Role |
+|------|------|
+| Voice | OS / browser STT |
+| Structured fields | Intents, entities, dates, price |
+| Application backend | Auth, validation, persistence |
+| Database | PostgreSQL |
 
-| Folder | Domain | Tests |
-|--------|--------|--------|
-| [planner/](./planner/) | Personal planner (tasks, habits, shopping) | `node --test` |
-| [beauty-salon/](./beauty-salon/) | **Beauty salon booking** (client, service, time, price) | Vitest |
+## Samples in this repo
 
-## Run tests locally
+| Folder | Context | Test runner |
+|--------|---------|-------------|
+| [planner/](./planner/) | Tasks, habits, shopping lists | `node --test` |
+| [beauty-salon/](./beauty-salon/) | Appointment booking (client, service, slot, price) | Vitest |
+
+Shared idea: dictionaries, anchors, regression tests on noisy transcripts (including real STT glitches in the salon suite).
+
+## Run tests
 
 ```powershell
 cd applied-ai/01-voice-nlu-pipeline
@@ -33,12 +34,4 @@ npm install
 npm test
 ```
 
-## Docs
-
-- [interview-notes.md](./interview-notes.md) - what to say on interviews (NLU vs LLM)
-
----
-
-### Кратко (RU)
-
-Два продукта: **планировщик** и **запись в салон красоты**. Нейросеть внутри **не обучаем** - правила, словари, тесты. Цепочка: голос → поля → **сервер** → БД (не «ещё один AI API»).
+No custom model training in these samples - behavior is defined in code and covered by tests.

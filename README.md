@@ -15,15 +15,16 @@ Public patterns from production work - **DevOps**, **integrations**, **applied N
 | Section | Focus |
 |---------|--------|
 | [**devops/**](./devops/) | VPS hardening, nginx, monitoring, runbooks |
-| [**applied-ai/**](./applied-ai/) | Voice → structured fields → API, NLU pipelines, tests |
+| [**applied-ai/**](./applied-ai/) | Voice → structured fields → application backend, NLU + tests |
 | [**case-studies/**](./case-studies/) | Short narratives (no proprietary code dumps) |
 
-## Planned code extracts
+## Highlights
 
 | Topic | Status |
 |-------|--------|
-| Voice intent parser + tests | planned |
-| Sanitized nginx / UFW templates | planned |
+| [Voice NLU pipeline + tests](./applied-ai/01-voice-nlu-pipeline/) | done |
+| [Defense in depth](./devops/01-defense-in-depth/) | done |
+| [Incident monitoring](./devops/02-incident-monitoring/) | done |
 
 ## Rules for this repo
 
