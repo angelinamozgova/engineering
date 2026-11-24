@@ -8,6 +8,6 @@ Work in progress - **one topic at a time**.
 |---|--------|--------|
 | 1 | [Defense in depth](./01-defense-in-depth/) (UFW, nginx, SSH, rate limits) | done |
 | 2 | [Incident monitoring](./02-incident-monitoring/) (alerts, logs, runbook) | done |
-| 3 | Release smoke tests (Selenium patterns) | optional |
+| 3 | [Release smoke tests (Selenium patterns)](./03-release-smoke-tests/) | done |
 
 Each item becomes a folder or a linked repo with **sanitized** configs only.

@@ -25,6 +25,10 @@ Public patterns from production work - **DevOps**, **integrations**, **applied N
 | [Voice NLU pipeline + tests](./applied-ai/01-voice-nlu-pipeline/) | done |
 | [Defense in depth](./devops/01-defense-in-depth/) | done |
 | [Incident monitoring](./devops/02-incident-monitoring/) | done |
+| [Case studies](./case-studies/) (beauty booking + planner) | done |
+| [Fuzzy client match](./applied-ai/02-stt-fuzzy-client-match/) | done |
+| [LLM routing demo](./applied-ai/03-llm-fallback-routing/) | done |
+| [Release smoke patterns](./devops/03-release-smoke-tests/) | done |
 
 ## Rules for this repo
 

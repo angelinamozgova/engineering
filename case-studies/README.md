@@ -1,11 +1,12 @@
 # Case studies
 
-Short narratives: problem → architecture → outcome.  
-Product names mentioned **only where useful**, not in every heading.
+Short narratives: **problem → approach → outcome**.  
+Each file: **English** body + **Кратко (RU)** at the bottom (same pattern as `devops/01-defense-in-depth/`).  
+No full application source - only what is safe and useful for readers.
 
 | Study | Status |
 |-------|--------|
-| Production web app + PostgreSQL (beauty / services, embedded client) | draft |
-| Cross-platform planner (PWA + mobile) | draft |
+| [01 - Beauty services booking](./01-beauty-services-booking.md) (embedded client + PostgreSQL + voice) | done |
+| [02 - Cross-platform planner](./02-cross-platform-planner.md) (PWA + mobile + voice NLU) | done |
 
-No full application source here - only what is safe and useful for readers.
+Each study links to **devops/** and **applied-ai/** samples on this repo.
