@@ -18,22 +18,22 @@ Public patterns from production work - **DevOps**, **integrations**, **applied N
 | [**applied-ai/**](./applied-ai/) | Voice → structured fields → application backend, NLU + tests |
 | [**case-studies/**](./case-studies/) | Short narratives (no proprietary code dumps) |
 
-## Highlights
+## Contents
 
-| Topic | Status |
-|-------|--------|
-| [Voice NLU pipeline + tests](./applied-ai/01-voice-nlu-pipeline/) | done |
-| [Defense in depth](./devops/01-defense-in-depth/) | done |
-| [Incident monitoring](./devops/02-incident-monitoring/) | done |
-| [Case studies](./case-studies/) (beauty booking + planner) | done |
-| [Fuzzy client match](./applied-ai/02-stt-fuzzy-client-match/) | done |
-| [LLM routing demo](./applied-ai/03-llm-fallback-routing/) | done |
-| [Release smoke patterns](./devops/03-release-smoke-tests/) | done |
+| Topic |
+|-------|
+| [Voice NLU pipeline + tests](./applied-ai/01-voice-nlu-pipeline/) |
+| [Defense in depth](./devops/01-defense-in-depth/) |
+| [Incident monitoring](./devops/02-incident-monitoring/) |
+| [Case studies](./case-studies/) |
+| [Fuzzy client match (Levenshtein)](./applied-ai/02-stt-fuzzy-client-match/) |
+| [Rules-first vs LLM routing sample](./applied-ai/03-llm-fallback-routing/) |
+| [Release smoke test patterns](./devops/03-release-smoke-tests/) |
 
 ## Rules for this repo
 
-- No secrets, production IPs, or `.env` files
-- Obfuscated configs only
+- No credentials, tokens, or production endpoints in this repository
+- Sanitized configs and samples only
 
 ---
 

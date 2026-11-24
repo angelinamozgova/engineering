@@ -10,7 +10,7 @@ A **cross-platform planner**: daily goals, tasks, habits, shopping lists, and no
 
 - Capture must be **fast** (voice and short phrases), not only tap-heavy forms.
 - Parsed items must map to **distinct types** (task vs habit vs shopping) without calling an LLM on every utterance.
-- Portfolio readers need **proof**, not marketing: small **public parser extract + tests**, not the full app repository.
+- Readers should see **proof**, not marketing: a small **public parser extract + tests**, not the full app repository.
 
 ## Approach
 
@@ -29,7 +29,7 @@ User voice (platform STT)  -->  parseVoiceTranscript  -->  typed items (task | h
 
 ## Outcomes
 
-- Voice path documented end-to-end in interview notes locally; on GitHub: **runnable tests** in [planner/](../applied-ai/01-voice-nlu-pipeline/planner/).
+- Voice parsing is backed by **runnable tests** in [planner/](../applied-ai/01-voice-nlu-pipeline/planner/).
 - Clear separation: **NLU sample** is public; **full UI, auth, and hosting** stay private.
 - Same engineering story as the services booking case: **STT is platform**, **structure is ours**, persistence is **backend**, not an "AI API".
 
@@ -46,7 +46,7 @@ User voice (platform STT)  -->  parseVoiceTranscript  -->  typed items (task | h
 
 **Кроссплатформенный планировщик:** цели дня, задачи, привычки, список покупок, заметки. Доставка - **PWA** и **мобильное** приложение с одной логикой сущностей.
 
-**Проблема:** ввод должен быть быстрым (голос и короткие фразы); нужно различать типы (задача / привычка / покупка) **без LLM на каждую фразу**. На витрине - **доказательство** (вырезка парсера + тесты), а не весь репозиторий продукта.
+**Проблема:** ввод должен быть быстрым (голос и короткие фразы); нужно различать типы (задача / привычка / покупка) **без LLM на каждую фразу**. В открытом репозитории - **вырезка парсера + тесты**, а не весь код продукта.
 
 **Решение:** STT платформы → `parseVoiceTranscript` → типизированные объекты; в проде дальше синхронизация через backend (в публичном репо этого нет). Качество - `node --test` на русских фразах.
 

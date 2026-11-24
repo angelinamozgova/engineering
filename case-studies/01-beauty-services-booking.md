@@ -35,7 +35,7 @@ Admin access: **SSH over private mesh VPN**, not public port 22. Details: [defen
 
 - Staff can **dictate** client name, service, date, time, and price; parser turns utterances into structured fields with test coverage (including real STT-glitch samples in Vitest).
 - **Defence in depth** and **incident monitoring** patterns documented separately so security and NLU stay reviewable without dumping product code.
-- Sensitive values (tokens, IPs, `.env`) stay **out of GitHub** by policy.
+- Sensitive values (tokens, production hosts) stay **out of GitHub** by policy.
 
 ## Related public notes
 

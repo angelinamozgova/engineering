@@ -2,7 +2,7 @@
 
 After platform **speech-to-text**, client names are often wrong (glue, case, typos). This sample ranks roster entries with **Levenshtein distance** on a normalized string - complement to field parsing in [01-voice-nlu-pipeline](../01-voice-nlu-pipeline/).
 
-Production also uses **dictionary normalization** (cases, glued words) inside the salon parser; this folder isolates **fuzzy roster match** for interviews and tests.
+The salon parser also uses **dictionary normalization** (cases, glued words); this folder isolates **fuzzy roster match** with unit tests.
 
 ## Run tests
 
@@ -23,4 +23,4 @@ npm test
 
 ### Кратко (RU)
 
-После STT имя клиента часто кривое. Справочник сверяем через **Левенштейна** на нормализованной строке (регистр, `ё`). Это дополнение к разбору полей в п.1, отдельно - чтобы на собесе показать **fuzzy match** с тестами.
+После STT имя клиента часто кривое. Справочник сверяем через **Левенштейна** на нормализованной строке (регистр, `ё`). Дополнение к разбору полей в п.1, с отдельными тестами.
