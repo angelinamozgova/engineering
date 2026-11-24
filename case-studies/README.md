@@ -1,6 +1,6 @@
 # Case studies
 
-Short narratives: **problem → approach → outcome**.  
+Short reads on a **real booking app** and a **cross-platform planner**: problem → approach → outcome.  
 English body; **Кратко (RU)** at the bottom of each file.  
 No full application source - only what is safe and useful for readers.
 

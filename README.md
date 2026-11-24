@@ -16,7 +16,7 @@ Public patterns from production work - **DevOps**, **integrations**, **applied N
 |---------|--------|
 | [**devops/**](./devops/) | VPS hardening, nginx, monitoring, runbooks |
 | [**applied-ai/**](./applied-ai/) | Voice → structured fields → application backend, NLU + tests |
-| [**case-studies/**](./case-studies/) | Short narratives (no proprietary code dumps) |
+| [**case-studies/**](./case-studies/) | Short reads: real booking app + planner, with links below |
 
 ## Contents
 
@@ -28,7 +28,7 @@ Public patterns from production work - **DevOps**, **integrations**, **applied N
 | [Case studies](./case-studies/) |
 | [Fuzzy client match (Levenshtein)](./applied-ai/02-stt-fuzzy-client-match/) |
 | [Rules-first vs LLM routing sample](./applied-ai/03-llm-fallback-routing/) |
-| [Release smoke test patterns](./devops/03-release-smoke-tests/) |
+| [UI health checks after deploy](./devops/03-ui-health-checks-after-deploy/) |
 
 ## Rules for this repo
 

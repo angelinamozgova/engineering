@@ -1,6 +1,6 @@
-# Smoke scope
+# Health check scope (after deploy)
 
-## In scope (smoke)
+## In scope
 
 - Application shell loads over HTTPS (200, no console fatal).
 - Health or version endpoint returns expected shape (if exposed internally in CI).
@@ -8,7 +8,7 @@
   - Services app: open booking form, assert required fields render.
   - Planner: home list renders, add-task control present.
 
-## Out of scope (smoke)
+## Out of scope
 
 - Full voice NLU matrix (covered in `applied-ai/` unit tests).
 - Payment provider flows (hosted checkout).
@@ -25,4 +25,4 @@
 
 ## Failure policy
 
-Smoke **red** blocks promote; does not auto-roll back production without human runbook step.
+A **failed health check** blocks promote; production roll-back still follows the human runbook, not automation alone.

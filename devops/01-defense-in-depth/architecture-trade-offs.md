@@ -1,4 +1,6 @@
-# Design decisions (deliberate non-goals)
+# Architecture trade-offs (deliberate choices)
+
+Recorded **why** we rejected some common defaults on this deployment (not UI/design).
 
 | Decision | Rationale |
 |----------|-----------|
@@ -7,5 +9,3 @@
 | **No polling bot worker in production** | Inbound **webhook** mode for the messaging integration; separate long-poll service disabled |
 | **No plaintext storage for sensitive PII** | Phone-like identifiers stored as HMAC + last digits; see matrix row **PII at rest** |
 | **No application port on firewall** | API reachable only via nginx on localhost upstream |
-
-These are trade-offs, not universal rules - document **why** for audits and interviews.

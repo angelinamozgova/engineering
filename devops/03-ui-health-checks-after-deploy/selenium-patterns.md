@@ -28,16 +28,16 @@ class BookingFormPage:
 ## CI outline (conceptual)
 
 ```yaml
-# start: ci smoke stage - conceptual
-smoke_ui:
+# start: ci ui health check stage - conceptual
+ui_health_after_deploy:
   stage: test
   image: python:3.12-slim
   script:
   - pip install selenium webdriver-manager pytest
-  - pytest tests/smoke --base-url "$STAGING_BASE_URL" --headless
+  - pytest tests/ui_health --base-url "$STAGING_BASE_URL" --headless
   rules:
   - if: $CI_PIPELINE_SOURCE == "push"
-# end: ci smoke stage - conceptual
+# end: ci ui health check stage - conceptual
 ```
 
 Use **staging base URL** from CI variables - never commit prod hosts.
