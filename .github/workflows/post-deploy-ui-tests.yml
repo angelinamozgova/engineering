@@ -1,0 +1,32 @@
+# start: CI — post-deploy UI tests (Playwright)
+name: Post-deploy UI tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'devops/03-post-deploy-ui-tests/**'
+      - '.github/workflows/post-deploy-ui-tests.yml'
+  pull_request:
+    paths:
+      - 'devops/03-post-deploy-ui-tests/**'
+  workflow_dispatch:
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: devops/03-post-deploy-ui-tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Run UI tests
+        run: npm test
+# end: CI — post-deploy UI tests (Playwright)

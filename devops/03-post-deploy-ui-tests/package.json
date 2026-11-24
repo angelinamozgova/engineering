@@ -1,0 +1,14 @@
+{
+  "name": "post-deploy-ui-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "serve": "^14.2.4",
+    "typescript": "^5.8.3"
+  }
+}
