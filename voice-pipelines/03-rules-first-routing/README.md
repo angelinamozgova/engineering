@@ -12,7 +12,7 @@ Production today stays on the **rules** branch; this is a small, testable decisi
 ## Run tests
 
 ```powershell
-cd applied-ai/03-llm-fallback-routing
+cd voice-pipelines/03-rules-first-routing
 npm install
 npm test
 ```

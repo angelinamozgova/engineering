@@ -18,7 +18,7 @@ This repository implements **one automated example** of that check (step 5 below
    └─ Backup restore — runbook (not automated here)
 
 4. Application logic (tests)
-   └─ applied-ai/ — npm test
+   └─ voice-pipelines/ — npm test
 
 5. After deploy → UI gate (this folder)
         ↓

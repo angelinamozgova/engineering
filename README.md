@@ -2,7 +2,7 @@
 
 # Engineering notes & code samples
 
-Public patterns from production work - **DevOps**, **integrations**, **applied NLU**.
+Public patterns from production work - **DevOps**, **integrations**, **rule-based voice & NLU**.
 
 [← Back to profile](https://github.com/angelinamozgova)
 
@@ -15,17 +15,17 @@ Public patterns from production work - **DevOps**, **integrations**, **applied N
 | Section | Focus |
 |---------|--------|
 | [**devops/**](./devops/) | VPS hardening, nginx, monitoring, runbooks |
-| [**applied-ai/**](./applied-ai/) | Voice → structured fields → application backend, NLU + tests |
+| [**voice-pipelines/**](./voice-pipelines/) | Voice → structured fields → application backend, NLU + tests |
 
 ## Contents
 
 | Topic |
 |-------|
-| [Voice NLU pipeline + tests](./applied-ai/01-voice-nlu-pipeline/) |
+| [Voice NLU pipeline + tests](./voice-pipelines/01-voice-nlu-pipeline/) |
 | [Defense in depth](./devops/01-defense-in-depth/) |
 | [Incident monitoring](./devops/02-incident-monitoring/) |
-| [Fuzzy client match (Levenshtein)](./applied-ai/02-stt-fuzzy-client-match/) |
-| [Rules-first vs LLM routing sample](./applied-ai/03-llm-fallback-routing/) |
+| [Fuzzy client match (Levenshtein)](./voice-pipelines/02-stt-fuzzy-client-match/) |
+| [Rules-first routing sample](./voice-pipelines/03-rules-first-routing/) |
 | [Post-deploy UI tests](./devops/03-post-deploy-ui-tests/) |
 
 ## Rules for this repo

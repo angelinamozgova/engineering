@@ -8,7 +8,7 @@ Overview and narrative: [../README.md](../README.md).
 | [beauty-salon/](./beauty-salon/) | Appointment fields: client, service, slot, price |
 
 ```powershell
-cd applied-ai/01-voice-nlu-pipeline
+cd voice-pipelines/01-voice-nlu-pipeline
 npm install
 npm test
 ```

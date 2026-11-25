@@ -7,7 +7,7 @@ The salon parser also uses **dictionary normalization** (cases, glued words); th
 ## Run tests
 
 ```powershell
-cd applied-ai/02-stt-fuzzy-client-match
+cd voice-pipelines/02-stt-fuzzy-client-match
 npm install
 npm test
 ```
@@ -17,7 +17,7 @@ npm test
 | Piece | Link |
 |-------|------|
 | Voice field parsing | [beauty-salon/voice](../01-voice-nlu-pipeline/beauty-salon/voice/) |
-| Overview | [applied-ai README](../README.md) |
+| Overview | [voice-pipelines README](../README.md) |
 
 ---
 

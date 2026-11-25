@@ -1,4 +1,4 @@
-# Applied AI (NLU in products)
+# Voice pipelines (NLU in production)
 
 **Voice → structured fields → application backend → database** — rule-based NLU with regression tests, no custom model training in these samples.
 
@@ -11,7 +11,7 @@ Voice (STT) -> structured fields (NLU) -> application backend -> database
 **Production web applications** where users enter data by voice on mobile:
 
 - **Services booking** — embedded client, appointment fields (see beauty-salon sample).
-- **Day planner** — PWA + mobile, same entities (tasks, habits, shopping); public repo has parser tests only, not full app source.
+- **DayGoal** — PWA + mobile, same entities (tasks, habits, shopping); public repo has parser tests only, not full app source.
 
 Speech-to-text comes from the **platform** (OS/browser); **structuring** is our code — dictionaries, field anchors, tests.
 
@@ -44,7 +44,7 @@ Speech-to-text comes from the **platform** (OS/browser); **structuring** is our 
 | [01-voice-nlu-pipeline/beauty-salon/](./01-voice-nlu-pipeline/beauty-salon/) | Appointment fields: client, service, slot, price |
 
 ```powershell
-cd applied-ai/01-voice-nlu-pipeline
+cd voice-pipelines/01-voice-nlu-pipeline
 npm install
 npm test
 ```
@@ -55,4 +55,4 @@ npm test
 |---|--------|
 | 1 | [Voice NLU pipeline + tests](./01-voice-nlu-pipeline/) |
 | 2 | [STT + fuzzy client match (Levenshtein)](./02-stt-fuzzy-client-match/) |
-| 3 | [Rules-first routing sample](./03-llm-fallback-routing/) |
+| 3 | [Rules-first routing sample](./03-rules-first-routing/) |
