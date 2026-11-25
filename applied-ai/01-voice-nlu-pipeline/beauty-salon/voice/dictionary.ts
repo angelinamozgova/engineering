@@ -1,6 +1,6 @@
 ﻿// start: словарь домена — услуги, триггеры, синонимы для собственного парсера
 // Правило: слово в словаре → классифицируем без сторонних API
-import { BEAUTY_SERVICE_KEYWORDS } from './beautyServiceKeywords';
+import { BEAUTY_SERVICE_KEYWORDS } from './lexicon-beauty-services';
 import { EXTENDED_SERVICE_KEYWORDS } from './extendedServiceKeywords';
 
 // start: услуги — бьюти + эпиляция, фото, репетиторство (сленг, окончания, фразы)
