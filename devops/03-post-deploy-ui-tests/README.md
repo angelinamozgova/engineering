@@ -1,53 +1,46 @@
 # Post-deploy UI tests
 
-## Start here (30 seconds)
+Sample **UI gate after deploy**: staging must show a usable booking screen, not only green API logs.
 
-After we **deploy a new version**, we need a **fast** check: did the **service UI** still open and show the booking flow, or is it a blank page / broken form?
+## Release chain
 
-This folder contains a **tiny working example** of that check:
+```
+1. Build / merge
+   └─ Clean merge; deploy artefact ready (private CI — not in this public repo)
 
-| File | Role in one line |
-|------|------------------|
-| [fixture/booking-shell.html](./fixture/booking-shell.html) | **Fake booking page** in the repo (not your live site). |
-| [tests/booking-shell.spec.ts](./tests/booking-shell.spec.ts) | **Script** that opens the page and checks the service field is visible. |
-| [health-check-scope.md](./health-check-scope.md) | **Rules**: what belongs in this kind of check vs full regression. |
+2. Server & perimeter
+   └─ HTTPS, loopback API, firewall, SSH — devops/01-defense-in-depth
 
-On **production** the same *idea* runs against **staging URL** after deploy.  
-On **GitHub** it runs against **booking-shell.html** so we can publish code without secrets.
+3. Service health & backups
+   └─ 5xx, auth spikes, backup job — devops/02-incident-monitoring
+   └─ Backup restore — runbook (not automated here)
 
-```text
-Deploy finished  →  open UI  →  one critical screen OK?  →  only then promote further
+4. Application logic
+   └─ NLU / parsers — npm test in applied-ai/
+
+5. After deploy → UI gate (this folder)
+   └─ Booking screen; main form renders — fixture + test below
+
+6. Full UI regression / payments
+   └─ Private QA — not on GitHub
 ```
 
----
+## Logic (this folder)
 
-## The only automated test (what it does in plain language)
+```
+New version deployed
+        ↓
+Open the booking screen in the UI (not only “API OK in logs”)
+        ↓
+Main booking form renders?  →  yes  →  release may proceed
+                            →  no   →  stop and fix
+```
 
-Open [tests/booking-shell.spec.ts](./tests/booking-shell.spec.ts) — **7 lines of logic**:
+The test uses [fixture/booking-shell.html](./fixture/booking-shell.html) and [tests/booking-shell.spec.ts](./tests/booking-shell.spec.ts).
 
-| Step | Code idea | Meaning |
-|------|-----------|---------|
-| 1 | open `/booking-shell.html` | Load the fake booking page (like opening the app after deploy). |
-| 2 | find element with `data-testid="service"` | The **service** field must exist (main booking input). |
-| 3 | assert visible | User would see the form — not an empty or broken shell. |
+## Run
 
-That is **intentionally one scenario**. Full voice NLU, payments, and load tests live elsewhere (`applied-ai/`, other pipelines).
-
----
-
-## Why not test the real salon site here?
-
-| Production | This repository |
-|------------|-----------------|
-| Real HTTPS URL, login, data | Static HTML file `fixture/booking-shell.html` |
-| Secrets in CI variables | Nothing sensitive to leak |
-| Many UI paths | **One** path as a pattern |
-
-We are showing **release discipline + CI**, not exporting the whole QA suite.
-
----
-
-## Run locally
+**Local**
 
 ```powershell
 cd devops/03-post-deploy-ui-tests
@@ -56,20 +49,44 @@ npx playwright install chromium
 npm test
 ```
 
-You should see **1 passed**.
+**GitHub:** [post-deploy-ui-tests.yml](../../.github/workflows/post-deploy-ui-tests.yml) on push.
+
+**On failure:** block promote; production roll-back is **manual** (runbook).
 
 ---
 
-## CI
+### Цепочка релиза (RU)
 
-[`.github/workflows/post-deploy-ui-tests.yml`](../../.github/workflows/post-deploy-ui-tests.yml) runs `npm test` on push when this folder changes.
+```
+1. Сборка / merge
+   └─ Чистый merge; артефакт на выкладку (приватный CI — не в этом репо)
 
----
+2. Сервер и периметр
+   └─ HTTPS, API на localhost, firewall, SSH — devops/01-defense-in-depth
 
-### Кратко (RU)
+3. Доступность и бэкапы
+   └─ 5xx, 401, бэкап — devops/02-incident-monitoring
+   └─ Восстановление из бэкапа — runbook (не автотест здесь)
 
-Короткая проверка UI в браузере после деплоя. Здесь рабочие тесты.
+4. Логика приложения
+   └─ NLU — npm test в applied-ai/
 
-**Что внутри:** учебная страница записи + один тест «страница открылась, поле услуги видно». На бою та же логика, но с URL staging, без выкладки prod в GitHub.
+5. После выкладки → UI-gate (эта папка)
+   └─ Экран записи; форма отрисована — фикстура + тест
 
-**Если тест зелёный:** минимальный UI жив. **Если красный:** релиз дальше не катим. Откат на бою — по runbook, не автоматом из этого job.
+6. Полная регрессия UI / оплаты
+   └─ Приватная QA — не на GitHub
+```
+
+### Логика (RU)
+
+```
+Выложили новую версию
+        ↓
+Открыли экран записи в UI (не только «в логах API ок»)
+        ↓
+Основная форма записи отрисовалась?  →  да  →  можно дальше по релизу
+                                    →  нет →  стоп, чиним
+```
+
+Провал теста — стоп promote; откат прода — вручную по runbook.

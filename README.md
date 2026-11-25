@@ -28,7 +28,7 @@ Public patterns from production work - **DevOps**, **integrations**, **applied N
 | [Case studies](./case-studies/) |
 | [Fuzzy client match (Levenshtein)](./applied-ai/02-stt-fuzzy-client-match/) |
 | [Rules-first vs LLM routing sample](./applied-ai/03-llm-fallback-routing/) |
-| [Post-deploy UI tests (Playwright)](./devops/03-post-deploy-ui-tests/) |
+| [Post-deploy UI tests](./devops/03-post-deploy-ui-tests/) |
 
 ## Rules for this repo
 
