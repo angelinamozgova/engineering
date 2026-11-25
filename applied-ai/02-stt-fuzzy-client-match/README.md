@@ -17,7 +17,7 @@ npm test
 | Piece | Link |
 |-------|------|
 | Voice field parsing | [beauty-salon/voice](../01-voice-nlu-pipeline/beauty-salon/voice/) |
-| Case study | [01-beauty-services-booking](../../case-studies/01-beauty-services-booking.md) |
+| Overview | [applied-ai README](../README.md) |
 
 ---
 
